@@ -1,5 +1,3 @@
-package ch.heig.pl.banque;
-
 public class Compte {
     private int numero;
     private int montant;

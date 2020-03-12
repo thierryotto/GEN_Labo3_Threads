@@ -1,5 +1,3 @@
-package ch.heig.pl.banque;
-
 import java.util.ArrayList;
 import java.util.List;
 
