@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="banque" />
+        <module name="GEN_Labo3" />
         <module name="lecteursredacteurs" />
+        <module name="banque" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="banque" target="1.5" />
+      <module name="GEN_Labo3" target="1.8" />
       <module name="lecteursredacteurs" target="1.5" />
     </bytecodeTargetLevel>
   </component>
