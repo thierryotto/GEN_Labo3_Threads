@@ -8,8 +8,8 @@ class TransfertsTest {
     @Test
     void declencher1000TransfertsBanque10Comptes() throws InterruptedException {
         final int NBCOMPTES = 10;
-        final int NBTRANSFERTS = 100;
-        final int NBBOUCLES = 10;
+        final int NBTRANSFERTS = 1000;
+        final int NBBOUCLES = 1000;
 
         Transferts t1 = new Transferts(NBCOMPTES, NBTRANSFERTS);
         LinkedList<Thread> threadsTransfert = new LinkedList<>();

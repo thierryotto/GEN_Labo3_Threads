@@ -28,6 +28,12 @@ public class Banque {
 
     public void transfert(int debiteur, int crediteur, int montant) {
         if (comptes.get(debiteur).debit(montant)) {
+            // 1sec = 1000 millis
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             comptes.get(crediteur).credit(montant);
         }
     }

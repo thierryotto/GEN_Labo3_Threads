@@ -39,13 +39,6 @@ public class Transferts implements Runnable {
             banque.transfert(Util.random.nextInt(this.nbComptes),
                              Util.random.nextInt(this.nbComptes),
                              Util.random.nextInt(SOMMEMAX));
-
-            // 1sec = 1000 millis
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
     }
 
