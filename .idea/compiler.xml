@@ -4,7 +4,7 @@
     <bytecodeTargetLevel>
       <module name="banque" target="1.8" />
       <module name="GEN_Labo3" target="1.8" />
-      <module name="lecteursredacteurs" target="1.11" />
+      <module name="lecteursredacteurs" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
