@@ -61,6 +61,9 @@ public class Transferts implements Runnable {
     }
 }
 
+/**
+ * Classe utilitaire pour l'aléatoire
+ */
 class Util {
     public static final Random random = new Random(0x42);
 }

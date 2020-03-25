@@ -12,7 +12,7 @@ public class Banque {
             comptes.add(new Compte(i, creditInitial));
         }
     }
-    
+
     public int getNbComptes() {
         return comptes.size();
     }
@@ -26,14 +26,28 @@ public class Banque {
     }
 
     public void transfert(int debiteur, int crediteur, int montant) {
-        if (comptes.get(debiteur).debit(montant)) {
-            // 1sec = 1000 millis
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+
+        // Récupérer les comptes en tant qu'objet pour pouvoir appliquer
+        // la fonction de syncronisation des threads dessus
+        Compte compteDebiteur = comptes.get(debiteur);
+        Compte compteCrediteur = comptes.get(crediteur);
+
+        // L'accès au compte à débiter doit se faire par un seul thread à la fois
+        synchronized (compteDebiteur) {
+            if (compteDebiteur.debit(montant)) {
+
+                // Pour ralentir l'exécution des threads
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                // Idem : l'accès au compte à créditer doit se faire par un seul thread à la fois
+                synchronized (compteCrediteur) {
+                    compteCrediteur.credit(montant);
+                }
             }
-            comptes.get(crediteur).credit(montant);
         }
     }
 
