@@ -43,10 +43,7 @@ public class Banque {
                     e.printStackTrace();
                 }
 
-                // Idem : l'accès au compte à créditer doit se faire par un seul thread à la fois
-                synchronized (compteCrediteur) {
-                    compteCrediteur.credit(montant);
-                }
+                compteCrediteur.credit(montant);
             }
         }
     }
